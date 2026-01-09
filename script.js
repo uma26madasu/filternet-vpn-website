@@ -75,9 +75,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all feature cards, pricing cards, and testimonials
+// Observe all feature cards, pricing cards, and controls content
 const animatedElements = document.querySelectorAll(
-    '.feature-card, .pricing-card, .testimonial-card, .controls-content'
+    '.feature-card, .pricing-card, .controls-content'
 );
 
 animatedElements.forEach(el => {

@@ -264,3 +264,93 @@ window.addEventListener('load', () => {
                      window.performance.timing.navigationStart;
     console.log(`Page loaded in ${loadTime}ms`);
 });
+
+// ===================================
+// Modal Functionality
+// ===================================
+const loginModal = document.getElementById('loginModal');
+const comingSoonModal = document.getElementById('comingSoonModal');
+const navGetStartedBtn = document.querySelector('.navbar .btn-primary');
+const heroTrialBtn = document.getElementById('heroTrialBtn');
+const startTrialBtn = document.getElementById('startTrialBtn');
+const allGetStartedButtons = document.querySelectorAll('.btn-outline');
+
+// Get all close buttons
+const closeButtons = document.querySelectorAll('.modal-close');
+
+// Function to open modal
+function openModal(modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close modal
+function closeModal(modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Nav Get Started button - open login modal
+if (navGetStartedBtn) {
+    navGetStartedBtn.addEventListener('click', () => {
+        openModal(loginModal);
+    });
+}
+
+// Hero Start Free Trial button - open coming soon modal
+if (heroTrialBtn) {
+    heroTrialBtn.addEventListener('click', () => {
+        openModal(comingSoonModal);
+    });
+}
+
+// CTA Start Free Trial button - open coming soon modal
+if (startTrialBtn) {
+    startTrialBtn.addEventListener('click', () => {
+        openModal(comingSoonModal);
+    });
+}
+
+// All "Get Started" buttons in pricing cards - open login modal
+allGetStartedButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        openModal(loginModal);
+    });
+});
+
+// Close button functionality
+closeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const modal = this.closest('.modal');
+        closeModal(modal);
+    });
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+        closeModal(event.target);
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        if (loginModal.style.display === 'block') {
+            closeModal(loginModal);
+        }
+        if (comingSoonModal.style.display === 'block') {
+            closeModal(comingSoonModal);
+        }
+    }
+});
+
+// Google Sign-In button (placeholder - would integrate with actual Google OAuth)
+const googleSignInBtn = document.querySelector('.btn-google');
+if (googleSignInBtn) {
+    googleSignInBtn.addEventListener('click', () => {
+        console.log('Google Sign-In clicked - Integration needed');
+        // In production, this would trigger Google OAuth flow
+        alert('Google Sign-In integration coming soon!');
+    });
+}

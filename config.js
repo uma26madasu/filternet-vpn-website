@@ -19,7 +19,7 @@ const CONFIG = {
     // DEMO MODE
     // Set to true to bypass authentication for testing
     // Set to false for production
-    demoMode: true,
+    demoMode: false,
 
     // APP SETTINGS
     app: {

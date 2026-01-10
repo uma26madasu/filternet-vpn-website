@@ -345,12 +345,22 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Google Sign-In button (placeholder - would integrate with actual Google OAuth)
+// Google Sign-In button - redirect to dashboard
 const googleSignInBtn = document.querySelector('.btn-google');
 if (googleSignInBtn) {
     googleSignInBtn.addEventListener('click', () => {
-        console.log('Google Sign-In clicked - Integration needed');
+        console.log('Google Sign-In clicked - Redirecting to dashboard');
         // In production, this would trigger Google OAuth flow
-        alert('Google Sign-In integration coming soon!');
+        // For demo purposes, we'll redirect to the dashboard
+
+        // Add a loading animation
+        googleSignInBtn.innerHTML = '<span>Signing in...</span>';
+        googleSignInBtn.style.opacity = '0.7';
+        googleSignInBtn.style.cursor = 'wait';
+
+        // Simulate authentication delay and redirect
+        setTimeout(() => {
+            window.location.href = 'dashboard.html';
+        }, 1000);
     });
 }

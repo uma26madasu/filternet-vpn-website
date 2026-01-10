@@ -345,22 +345,31 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Google Sign-In button - redirect to dashboard
+// Google Sign-In button - trigger real Google OAuth
 const googleSignInBtn = document.querySelector('.btn-google');
 if (googleSignInBtn) {
     googleSignInBtn.addEventListener('click', () => {
-        console.log('Google Sign-In clicked - Redirecting to dashboard');
-        // In production, this would trigger Google OAuth flow
-        // For demo purposes, we'll redirect to the dashboard
+        console.log('Google Sign-In button clicked');
 
-        // Add a loading animation
-        googleSignInBtn.innerHTML = '<span>Signing in...</span>';
+        // Add loading animation
+        const originalHTML = googleSignInBtn.innerHTML;
+        googleSignInBtn.innerHTML = '<span>Connecting to Google...</span>';
         googleSignInBtn.style.opacity = '0.7';
         googleSignInBtn.style.cursor = 'wait';
+        googleSignInBtn.disabled = true;
 
-        // Simulate authentication delay and redirect
+        // Trigger Google Sign-In
         setTimeout(() => {
-            window.location.href = 'dashboard.html';
-        }, 1000);
+            if (window.GoogleAuth) {
+                window.GoogleAuth.signIn();
+            } else {
+                console.error('Google Auth not initialized');
+                googleSignInBtn.innerHTML = originalHTML;
+                googleSignInBtn.style.opacity = '1';
+                googleSignInBtn.style.cursor = 'pointer';
+                googleSignInBtn.disabled = false;
+                alert('Authentication system not ready. Please refresh the page.');
+            }
+        }, 300);
     });
 }

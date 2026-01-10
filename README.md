@@ -2,6 +2,20 @@
 
 A modern, responsive website for FilterNet VPN - a premium VPN service with advanced parental controls designed to keep families safe online.
 
+## 🎯 Quick Start
+
+### For Demo/Testing (No Setup Required)
+The website runs in **demo mode** by default. Just open `index.html` and everything works!
+
+### For Production (Google OAuth Setup)
+1. Read [GOOGLE_OAUTH_SETUP.md](GOOGLE_OAUTH_SETUP.md) for complete setup instructions
+2. Get your Google Client ID from [Google Cloud Console](https://console.cloud.google.com/)
+3. Update `config.js` with your Client ID
+4. Set `demoMode: false` in `config.js`
+
+### For Backend Integration
+See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for complete API integration documentation.
+
 ## ✨ Features
 
 - **Modern Design**: Clean, professional interface with appealing gradient colors

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parental Dashboard - FilterNet VPN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">FilterNet VPN</span>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span class="user-avatar">👤</span>
+                    <span class="user-name">Parent Account</span>
+                </div>
+                <button class="btn btn-small btn-outline" onclick="window.location.href='index.html'">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Overview</span>
+                </a>
+                <a href="#time-limits" class="nav-item" data-section="time-limits">
+                    <span class="nav-icon">⏰</span>
+                    <span class="nav-text">Time Limits</span>
+                </a>
+                <a href="#content-filtering" class="nav-item" data-section="content-filtering">
+                    <span class="nav-icon">🛡️</span>
+                    <span class="nav-text">Content Filtering</span>
+                </a>
+                <a href="#online-activity" class="nav-item" data-section="online-activity">
+                    <span class="nav-icon">📱</span>
+                    <span class="nav-text">Online Activity</span>
+                </a>
+                <a href="#bedtime" class="nav-item" data-section="bedtime">
+                    <span class="nav-icon">🌙</span>
+                    <span class="nav-text">Bedtime</span>
+                </a>
+                <a href="#family-members" class="nav-item" data-section="family-members">
+                    <span class="nav-icon">👨‍👩‍👧‍👦</span>
+                    <span class="nav-text">Family Members</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header-dash">
+                    <h1 class="section-title-dash">Family Overview</h1>
+                    <p class="section-subtitle-dash">Monitor and manage your family's online activity</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                        <div class="stat-info">
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Family Members</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📱</div>
+                        <div class="stat-info">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Protected Devices</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🚫</div>
+                        <div class="stat-info">
+                            <div class="stat-value">47</div>
+                            <div class="stat-label">Sites Blocked Today</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏰</div>
+                        <div class="stat-info">
+                            <div class="stat-value">3h 45m</div>
+                            <div class="stat-label">Total Screen Time</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="family-members-overview">
+                    <h2 class="subsection-title">Family Members</h2>
+                    <div class="members-grid">
+                        <div class="member-card">
+                            <div class="member-avatar">👧</div>
+                            <div class="member-info">
+                                <h3 class="member-name">Sarah's Device</h3>
+                                <div class="member-status">
+                                    <span class="status-badge status-safe">Safe</span>
+                                    <span class="member-time">2h 15m today</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="member-avatar">👦</div>
+                            <div class="member-info">
+                                <h3 class="member-name">Mike's Device</h3>
+                                <div class="member-status">
+                                    <span class="status-badge status-safe">Safe</span>
+                                    <span class="member-time">1h 30m today</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="member-avatar">👨</div>
+                            <div class="member-info">
+                                <h3 class="member-name">Dad's Device</h3>
+                                <div class="member-status">
+                                    <span class="status-badge status-active">Active</span>
+                                    <span class="member-time">No limits</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="member-avatar">👩</div>
+                            <div class="member-info">
+                                <h3 class="member-name">Mom's Device</h3>
+                                <div class="member-status">
+                                    <span class="status-badge status-active">Active</span>
+                                    <span class="member-time">No limits</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Limits Section -->
+            <section id="time-limits" class="dashboard-section">
+                <div class="section-header-dash">
+                    <h1 class="section-title-dash">Time Limits</h1>
+                    <p class="section-subtitle-dash">Set daily limits and app-specific time restrictions</p>
+                </div>
+
+                <!-- Daily Online Limit -->
+                <div class="limit-section">
+                    <h2 class="subsection-title">Daily Online Limit</h2>
+                    <div class="limit-card empty-state">
+                        <div class="empty-icon">☀️ ⏳</div>
+                        <p class="empty-text">Cap total online time by setting a daily limit.</p>
+                        <button class="btn btn-primary">Add Daily Limit</button>
+                    </div>
+                </div>
+
+                <!-- Individual App Limits -->
+                <div class="limit-section">
+                    <h2 class="subsection-title">Individual Limits</h2>
+                    <div class="limit-card empty-state">
+                        <div class="empty-icon">📱 ⏳</div>
+                        <p class="empty-text">Set limits for apps like YouTube or categories like Online Gaming and Social Media.</p>
+                        <button class="btn btn-primary">Add Individual Limits</button>
+                    </div>
+                </div>
+
+                <!-- Active Limits Example -->
+                <div class="limit-section">
+                    <h2 class="subsection-title">Active Limits for Sarah</h2>
+                    <div class="limits-list">
+                        <div class="limit-item">
+                            <div class="limit-left">
+                                <span class="app-icon">📺</span>
+                                <div class="limit-details">
+                                    <h4>YouTube</h4>
+                                    <p class="limit-time">1 hour per day</p>
+                                </div>
+                            </div>
+                            <div class="limit-right">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                                <span class="time-remaining">33 min left</span>
+                            </div>
+                        </div>
+                        <div class="limit-item">
+                            <div class="limit-left">
+                                <span class="app-icon">🎮</span>
+                                <div class="limit-details">
+                                    <h4>Gaming Apps</h4>
+                                    <p class="limit-time">30 minutes per day</p>
+                                </div>
+                            </div>
+                            <div class="limit-right">
+                                <div class="progress-bar">
+                                    <div class="progress-fill exceeded" style="width: 100%"></div>
+                                </div>
+                                <span class="time-remaining exceeded">Limit reached</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Filtering Section -->
+            <section id="content-filtering" class="dashboard-section">
+                <div class="section-header-dash">
+                    <h1 class="section-title-dash">Content Filtering</h1>
+                    <p class="section-subtitle-dash">Control what apps and websites your family can access</p>
+                </div>
+
+                <!-- Age Profile Selector -->
+                <div class="profile-selector">
+                    <button class="profile-btn">Child</button>
+                    <button class="profile-btn active">Teen</button>
+                    <button class="profile-btn">Adult</button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-tab="apps">Apps <span class="tab-count">12</span></button>
+                    <button class="filter-tab" data-tab="websites">Websites <span class="tab-count">0</span></button>
+                    <button class="filter-tab" data-tab="categories">Categories <span class="tab-count">5</span></button>
+                </div>
+
+                <!-- Apps Tab Content -->
+                <div class="tab-content active" id="apps-tab">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search apps..." class="search-input">
+                    </div>
+
+                    <div class="apps-list">
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #00A8E1, #0080B3);">📺</div>
+                                <span class="app-name">Amazon Prime Video</span>
+                            </div>
+                            <select class="app-status blocked">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #5865F2, #3B4BC7);">💬</div>
+                                <span class="app-name">Discord</span>
+                            </div>
+                            <select class="app-status blocked">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #1877F2, #0C63D4);">📘</div>
+                                <span class="app-name">Facebook</span>
+                            </div>
+                            <select class="app-status blocked">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #E4405F, #C13584);">📷</div>
+                                <span class="app-name">Instagram</span>
+                            </div>
+                            <select class="app-status blocked">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #FFFC00, #FFD600);">👻</div>
+                                <span class="app-name">Snapchat</span>
+                            </div>
+                            <select class="app-status blocked">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #FF9900, #E68A00);">📦</div>
+                                <span class="app-name">Amazon</span>
+                            </div>
+                            <select class="app-status allowed">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #000000, #333333);">📺</div>
+                                <span class="app-name">Cartoon Network</span>
+                            </div>
+                            <select class="app-status allowed">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                        <div class="app-item">
+                            <div class="app-left">
+                                <div class="app-icon-img" style="background: linear-gradient(135deg, #FF0000, #CC0000);">📺</div>
+                                <span class="app-name">YouTube</span>
+                            </div>
+                            <select class="app-status limited">
+                                <option value="blocked">Blocked</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="limited">Time Limited</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Websites Tab Content -->
+                <div class="tab-content" id="websites-tab">
+                    <div class="empty-state-section">
+                        <div class="empty-icon">🌐</div>
+                        <p class="empty-text">No website restrictions added yet</p>
+                        <button class="btn btn-primary">Add Website</button>
+                    </div>
+                </div>
+
+                <!-- Categories Tab Content -->
+                <div class="tab-content" id="categories-tab">
+                    <div class="categories-list">
+                        <div class="category-item">
+                            <div class="category-left">
+                                <span class="category-icon">🎮</span>
+                                <div class="category-info">
+                                    <h4>Gaming</h4>
+                                    <p>Online games and gaming platforms</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-left">
+                                <span class="category-icon">💬</span>
+                                <div class="category-info">
+                                    <h4>Social Media</h4>
+                                    <p>Social networking and messaging apps</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-left">
+                                <span class="category-icon">🎬</span>
+                                <div class="category-info">
+                                    <h4>Video Streaming</h4>
+                                    <p>Video content and streaming services</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-left">
+                                <span class="category-icon">🔞</span>
+                                <div class="category-info">
+                                    <h4>Adult Content</h4>
+                                    <p>Explicit and mature content</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-left">
+                                <span class="category-icon">🎰</span>
+                                <div class="category-info">
+                                    <h4>Gambling</h4>
+                                    <p>Betting and gambling websites</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Online Activity Section -->
+            <section id="online-activity" class="dashboard-section">
+                <div class="section-header-dash">
+                    <div>
+                        <h1 class="section-title-dash">Online Activity</h1>
+                        <p class="section-subtitle-dash">Track your family's device usage and app activity</p>
+                    </div>
+                    <div class="date-nav">
+                        <button class="date-btn">←</button>
+                        <span class="current-date">Today, January 9</span>
+                        <button class="date-btn">→</button>
+                    </div>
+                </div>
+
+                <p class="updated-time">Updated today at 9:32 PM</p>
+
+                <div class="activity-toggle">
+                    <button class="toggle-btn active">Show by app</button>
+                    <button class="toggle-btn">Show by category</button>
+                </div>
+
+                <!-- Activity Content -->
+                <div class="activity-content">
+                    <div class="activity-card">
+                        <div class="activity-icon-large">📱</div>
+                        <h3>No online activity</h3>
+                        <p class="activity-note">(Device may be using offline apps)</p>
+                    </div>
+                </div>
+
+                <!-- Sample Activity Data (hidden by default, shown when there's activity) -->
+                <div class="activity-list" style="display: none;">
+                    <div class="activity-item">
+                        <div class="activity-app">
+                            <div class="app-icon-img" style="background: linear-gradient(135deg, #FF0000, #CC0000);">📺</div>
+                            <div class="activity-details">
+                                <h4>YouTube</h4>
+                                <p class="activity-time">2:30 PM - 3:15 PM</p>
+                            </div>
+                        </div>
+                        <div class="activity-duration">45 min</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-app">
+                            <div class="app-icon-img" style="background: linear-gradient(135deg, #E4405F, #C13584);">📷</div>
+                            <div class="activity-details">
+                                <h4>Instagram</h4>
+                                <p class="activity-time">4:00 PM - 4:30 PM</p>
+                            </div>
+                        </div>
+                        <div class="activity-duration">30 min</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bedtime Section -->
+            <section id="bedtime" class="dashboard-section">
+                <div class="section-header-dash">
+                    <h1 class="section-title-dash">Bedtime</h1>
+                    <p class="section-subtitle-dash">Set and manage schedules for when devices go offline for the night</p>
+                </div>
+
+                <div class="bedtime-schedules">
+                    <div class="schedule-card">
+                        <div class="schedule-header">
+                            <div class="schedule-days">Su, M, Tu, W, Th, F, Sa</div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="schedule-time">10:00 PM - 7:00 AM</div>
+                        <button class="btn-text">Edit schedule</button>
+                    </div>
+
+                    <button class="add-schedule-btn">
+                        <span class="add-icon">+</span>
+                        <span>Add Schedule</span>
+                    </button>
+                </div>
+
+                <div class="bedtime-info">
+                    <h3>How Bedtime Works</h3>
+                    <ul class="info-list">
+                        <li>Devices will automatically go offline during bedtime hours</li>
+                        <li>Emergency calls and approved apps can still be accessed</li>
+                        <li>You'll receive a notification when bedtime starts</li>
+                        <li>Create different schedules for weekdays and weekends</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Family Members Section -->
+            <section id="family-members" class="dashboard-section">
+                <div class="section-header-dash">
+                    <h1 class="section-title-dash">Family Members</h1>
+                    <p class="section-subtitle-dash">Manage family members and their devices</p>
+                </div>
+
+                <div class="family-list">
+                    <div class="family-member-card">
+                        <div class="member-header">
+                            <div class="member-left">
+                                <div class="member-avatar">👧</div>
+                                <div class="member-details">
+                                    <h3>Sarah</h3>
+                                    <p class="member-age">Age 12 • Teen Profile</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-outline">Manage</button>
+                        </div>
+                        <div class="member-devices">
+                            <div class="device-tag">📱 iPhone</div>
+                            <div class="device-tag">💻 iPad</div>
+                        </div>
+                    </div>
+
+                    <div class="family-member-card">
+                        <div class="member-header">
+                            <div class="member-left">
+                                <div class="member-avatar">👦</div>
+                                <div class="member-details">
+                                    <h3>Mike</h3>
+                                    <p class="member-age">Age 8 • Child Profile</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-outline">Manage</button>
+                        </div>
+                        <div class="member-devices">
+                            <div class="device-tag">📱 iPhone</div>
+                        </div>
+                    </div>
+
+                    <button class="add-member-btn">
+                        <span class="add-icon">+</span>
+                        <span>Add Family Member</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
